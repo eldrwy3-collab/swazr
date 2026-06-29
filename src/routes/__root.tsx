@@ -45,7 +45,7 @@ export const Route = createRootRoute({
         href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap',
       },
     ],
-    scripts: [
+    scripts: [ 
       {
         type: 'application/ld+json',
         children: JSON.stringify({
@@ -62,7 +62,16 @@ export const Route = createRootRoute({
             priceCurrency: 'USD',
           },
         }),
-      },
+      },{
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-JVVESHXNPQ',
+          async: true,
+        },
+        {
+          children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JVVESHXNPQ');`,
+        },
     ],
   }),
   shellComponent: RootDocument,
