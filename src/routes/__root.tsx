@@ -62,17 +62,18 @@ export const Route = createRootRoute({
             priceCurrency: 'USD',
           },
         }),
-      },{
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-JVVESHXNPQ',
+      },
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-JJHS00VKWH',
           async: true,
         },
         {
           children: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-JVVESHXNPQ');`,
+gtag('config', 'G-JJHS00VKWH');`,
         },
-    ],
+      ],
   }),
   shellComponent: RootDocument,
 })
