@@ -64,14 +64,14 @@ export const Route = createRootRoute({
         }),
       },
         {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-JJHS00VKWH',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-0G6DPK6T43',
           async: true,
         },
         {
           children: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-JJHS00VKWH');`,
+gtag('config', 'G-0G6DPK6T43');`,
         },
       ],
   }),
