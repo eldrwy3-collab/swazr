@@ -13,9 +13,9 @@ const CASES = [
     company: 'NVIDIA',
     industry: 'AI · Semiconductors · High Performance Computing',
     origin:
-      'NVIDIA traces back to the internal file-naming shorthand "NV" (Next Version). Searching for words containing those letters, the founders landed on the Latin "invidia" (envy), shortened to NVIDIA — combining a technical identifier with a symbolic meaning.',
+      'NVIDIA traces back to the internal file-naming shorthand "NV" (Next Version). Searching for words containing those letters, the founders landed on the Latin "invidia" (envy), shortened to NVIDIA – combining a technical root with a powerful human emotion.',
     analysis:
-      'NVIDIA shows that a technology brand does not need to describe its products. The name became an independent identity, allowing expansion across graphics, high-performance computing, and AI without requiring a rebrand.',
+      'NVIDIA shows that a technology brand does not need to describe its products. The name became an independent identity, allowing expansion across graphics, high-performance computing, and AI without requiring a rename.',
     lessons: [
       'Premium technology brands do not require descriptive names.',
       'Strategic positioning is built through execution, not literal naming.',
@@ -29,7 +29,7 @@ const CASES = [
     company: 'Anduril',
     industry: 'Defense Technology · AI · Autonomous Systems',
     origin:
-      'Named after Andúril, "Flame of the West" — Aragorn\'s sword in The Lord of the Rings — chosen as a symbolic reference to strength, leadership, and the defense of civilization rather than a description of any product.',
+      'Named after Andúril, "Flame of the West" – Aragorn’s sword in The Lord of the Rings – chosen as a symbolic reference to strength, leadership, and the defense of civilization rather than a description of any product.',
     analysis:
       'Anduril demonstrates the power of symbolic naming in defense technology: a name that evokes purpose and strategic strength rather than sensors or drones directly, functioning as a narrative asset instead of a product label.',
     lessons: [
@@ -45,9 +45,9 @@ const CASES = [
     company: 'Palantir',
     industry: 'Defense Technology · AI · Data Analytics',
     origin:
-      'Named after the Palantír, Tolkien\'s magical seeing-stone used to observe distant places — chosen to symbolize information superiority and decision intelligence rather than describing any software product.',
+      'Named after the Palantír, Tolkien’s magical seeing-stone used to observe distant places – chosen to symbolize information superiority and decision intelligence rather than describing any software product.',
     analysis:
-      'Palantir shows that a globally recognized technology brand can be built without a descriptive name. Its identity supports expansion across government, defense, healthcare, and finance while staying premium and consistent.',
+      'Palantir shows that a globally recognized technology brand can be built without a descriptive name. Its identity supports expansion across government, defense, healthcare, and finance while staying premium and coherent.',
     lessons: [
       'Unique names create stronger long-term differentiation.',
       'Symbolic branding increases perceived sophistication.',
@@ -61,9 +61,9 @@ const CASES = [
     company: 'OpenAI',
     industry: 'Artificial Intelligence · Research · Foundation Models',
     origin:
-      'The name combines "Open" and "AI," reflecting the founding mission of advancing artificial intelligence for broad benefit. The name has stayed fixed even as the company\'s products evolved far beyond that original framing.',
+      'The name combines "Open" and "AI", reflecting the founding mission of advancing artificial intelligence for broad benefit. The name has stayed fixed even as the company’s products evolved far beyond that original framing.',
     analysis:
-      'OpenAI shows that mission-driven naming can scale into a globally recognized brand. Value accumulated through reputation, trust, and sustained innovation — not through literal description of any single product.',
+      'OpenAI shows that mission-driven naming can scale into a globally recognized brand. Value accumulated through reputation, trust, and sustained innovation – not through literal description of any single product.',
     lessons: [
       'Mission-driven branding strengthens long-term positioning.',
       'Consistent execution builds stronger brands than descriptive naming.',
@@ -77,11 +77,10 @@ const CASES = [
     company: 'Skydio',
     industry: 'Autonomous Drones · AI · Computer Vision',
     origin:
-      'A coined name combining "Sky" with a modern technology-oriented suffix — short, globally pronounceable, and not tied to a literal description of autonomous flight.',
+      'A refined name combination "Sky" with a modern technological suffix – short, globally pronounceable, and not tied to a literal description of autonomous flight.',
     analysis:
-      'Skydio shows how a concise, coined name becomes associated with a specific technology category purely through consistent execution — supporting later expansion into defense, inspection, and public safety.',
+      'Skydio demonstrates how a clean, abstract name can support a premium autonomous systems brand while remaining flexible for future products beyond drones.',
     lessons: [
-      'Short names improve memorability.',
       'Distinctive names gain meaning through execution.',
       'Flexible identities allow expansion across industries.',
       'Strong pronunciation supports global recognition.',
@@ -109,10 +108,78 @@ const CASES = [
     company: 'Helsing',
     industry: 'Defense Technology · AI · Decision Intelligence',
     origin:
-      'Inspired by Abraham Van Helsing, chosen to symbolize vigilance and protection against modern threats through technology — a cultural reference rather than a product description.',
+      'Inspired by Abraham Van Helsing, chosen to symbolize vigilance and protection against modern threats through technology – a cultural reference rather than a product description.',
     analysis:
       'Helsing shows how a symbolic, culturally resonant name can anchor a premium defense-AI brand, while staying broad enough for future products across software, autonomous systems, and decision support.',
     lessons: [
       'Symbolic names create stronger emotional differentiation.',
       'Defense technology brands benefit from memorable identities.',
       'Brand value is built through execution and credibility.',
+    ],
+    sources: 'Helsing official website · Company history · Defense technology publications',
+  },
+]
+
+function SwazrCaseStudies() {
+  return (
+    <div className="case-studies-page">
+      <nav>
+        <Link to="/" className="nav-logo">
+          SWAZR.COM
+        </Link>
+        <div className="nav-right">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="/methodology" className="nav-link">
+            Methodology
+          </Link>
+          <a
+            href={DOCS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta"
+          >
+            Documentation
+          </a>
+        </div>
+      </nav>
+
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-eyebrow">Strategic Case Studies</div>
+          <h1 className="section-title">How Elite Brands Are Named</h1>
+          <p className="section-sub">
+            Real-world examples of premium technology and defense brands that
+            chose strategic, non-descriptive names — and why that approach
+            creates lasting value.
+          </p>
+
+          <div className="cases-list">
+            {CASES.map((c) => (
+              <div key={c.num} className="case-card">
+                <div className="case-num">{c.num}</div>
+                <h2 className="case-company">{c.company}</h2>
+                <div className="case-industry">{c.industry}</div>
+                <div className="case-origin">
+                  <strong>Origin:</strong> {c.origin}
+                </div>
+                <div className="case-analysis">
+                  <strong>Analysis:</strong> {c.analysis}
+                </div>
+                <ul className="case-lessons">
+                  {c.lessons.map((lesson, i) => (
+                    <li key={i}>{lesson}</li>
+                  ))}
+                </ul>
+                <div className="case-sources">
+                  <strong>Sources:</strong> {c.sources}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
