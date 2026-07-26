@@ -19,7 +19,10 @@ function SwazrMethodology() {
           <Link to="/" className="nav-link">
             Home
           </Link>
-          
+          <Link to="/case-studies" className="nav-link">
+            Case Studies
+          </Link>
+          <a
             href={DOCS_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -34,24 +37,11 @@ function SwazrMethodology() {
       <section className="section">
         <div className="section-inner">
           <div className="section-eyebrow">Strategic Methodology</div>
-          <h2 className="section-title">
-            The Research Behind SWAZR
-          </h2>
+          <h2 className="section-title">The Research Behind SWAZR</h2>
           <p className="section-sub">
             SWAZR was not selected by chance. Its name, structure, and
             positioning were developed through structured brand research
-            spanning linguistic analysis, market research, and comparative
-            brand evaluation. This page summarizes that process — the full
-            documentation is maintained in a dedicated{' '}
-            
-              href={DOCS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'var(--accent)', textDecoration: 'underline' }}
-            >
-              research archive
-            </a>
-            .
+            and competitive analysis.
           </p>
         </div>
       </section>
@@ -131,15 +121,15 @@ function SwazrMethodology() {
           </p>
           <div className="fw-grid">
             <div className="fw-card">
-              <div className="fw-category">Defense &amp; Autonomous Systems</div>
-              {['Anduril', 'Shield AI', 'Saronic', 'Helsing'].map((item) => (
+              <div className="fw-category">Defense & Autonomous Systems</div>
+              {['Anduril', 'Shield AI', 'Skydio', 'Helsing'].map((item) => (
                 <div key={item} className="fw-item">
                   {item}
                 </div>
               ))}
             </div>
             <div className="fw-card">
-              <div className="fw-category">Data &amp; AI Platforms</div>
+              <div className="fw-category">Data & AI Platforms</div>
               {['Palantir', 'Scale AI', 'OpenAI'].map((item) => (
                 <div key={item} className="fw-item">
                   {item}
@@ -166,11 +156,27 @@ function SwazrMethodology() {
           <div className="usp-grid">
             <div className="usp-text">
               <p>
-                Every claim made across SWAZR&apos;s documentation is
+                Every claim made across SWAZR’s documentation is
                 classified by evidence type, rather than presented as uniform
                 fact. This distinguishes verified, checkable information from
                 strategic reasoning and forward-looking hypotheses.
               </p>
-              <br />
-              
-                href={DOCS_URL}
+            </div>
+          </div>
+          <br />
+          <a
+            href={DOCS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: 'var(--accent)',
+              textDecoration: 'underline',
+            }}
+          >
+            Research archive →
+          </a>
+        </div>
+      </section>
+    </>
+  )
+}
