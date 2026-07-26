@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: SwazrLanding,
@@ -25,6 +25,12 @@ function SwazrLanding() {
           <a href="#usp" className="nav-link">
             Legal
           </a>
+          <Link to="/methodology" className="nav-link">
+            Methodology
+          </Link>
+          <Link to="/case-studies" className="nav-link">
+            Case Studies
+          </Link>
           <a
             href={GODADDY_URL}
             target="_blank"
@@ -580,6 +586,13 @@ function SwazrLanding() {
             rel="noopener noreferrer"
           >
             USPTO
+          </a>
+          <a
+            href="https://github.com/eldrwy3-collab/SWAZR-Brand-Repository"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
           </a>
           <a href="mailto:swazr.brend@gmail.com">Email</a>
         </div>
