@@ -31,6 +31,12 @@ function SwazrLanding() {
           <Link to="/case-studies" className="nav-link">
             Case Studies
           </Link>
+          <Link to="/brand-foundation" className="nav-link">
+            Brand Foundation
+          </Link>
+          <Link to="/buyer-fit" className="nav-link">
+            Buyer Fit
+          </Link>
           <a
             href={GODADDY_URL}
             target="_blank"
