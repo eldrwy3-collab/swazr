@@ -39,6 +39,72 @@ nav {
 .nav-cta { background: var(--accent); color: var(--black); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; padding: 0.6rem 1.3rem; border: none; cursor: pointer; text-decoration: none; text-transform: uppercase; transition: opacity 0.2s; }
 .nav-cta:hover { opacity: 0.85; }
 
+/* MOBILE MENU TOGGLE */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--white);
+  width: 42px; height: 42px;
+  align-items: center; justify-content: center;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  padding: 0;
+}
+.nav-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* MOBILE MENU OVERLAY */
+.nav-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 199;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.nav-overlay.open { opacity: 1; pointer-events: auto; }
+
+/* MOBILE MENU PANEL */
+.nav-mobile-menu {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 78%; max-width: 320px;
+  background: var(--black);
+  border-left: 1px solid var(--border);
+  z-index: 200;
+  padding: 6rem 2rem 2rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+.nav-mobile-menu.open { transform: translateX(0); }
+
+.nav-mobile-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.nav-mobile-link:active { color: var(--accent); }
+
+.nav-mobile-cta {
+  background: var(--accent);
+  color: var(--black);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 1.5rem;
+}
+
 /* HERO */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column;
@@ -170,6 +236,8 @@ footer { padding: 2rem 2.5rem; border-top: 1px solid var(--border); display: fle
 @media (max-width: 768px) {
   nav { padding: 1rem 1.2rem; }
   .nav-link { display: none; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); }
   .stat-item:nth-child(2) { border-right: none; }
   .roots-grid, .fw-grid, .uc-grid { grid-template-columns: 1fr; }
