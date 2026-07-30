@@ -40,7 +40,7 @@ function SwazrLanding() {
           <Link to="/buyer-fit" className="nav-link">
             Buyer Fit
           </Link>
-          
+          <a
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -64,21 +64,21 @@ function SwazrLanding() {
         onClick={() => setMenuOpen(false)}
       />
       <div className={`nav-mobile-menu ${menuOpen ? 'open' : ''}`}>
-        
+        <a
           href="#linguistic"
           className="nav-mobile-link"
           onClick={() => setMenuOpen(false)}
         >
           Heritage
         </a>
-        
+        <a
           href="#phonetic"
           className="nav-mobile-link"
           onClick={() => setMenuOpen(false)}
         >
           Phonetic
         </a>
-        
+        <a
           href="#usp"
           className="nav-mobile-link"
           onClick={() => setMenuOpen(false)}
@@ -113,7 +113,7 @@ function SwazrLanding() {
         >
           Buyer Fit
         </Link>
-        
+        <a
           href={GODADDY_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -139,7 +139,7 @@ function SwazrLanding() {
           ancient civilizations, engineered for the autonomous defense era.
         </p>
         <div className="hero-btns">
-          
+          <a
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -156,6 +156,27 @@ function SwazrLanding() {
           <span className="hero-badge">Listed on GoDaddy</span>
           <span className="hero-badge">Listed on Afternic</span>
           <span className="hero-badge">Instant Transfer</span>
+        </div>
+      </section>
+
+      {/* CINEMATIC BRAND VIDEO SECTION */}
+      <section style={{ background: '#0b0b0b', padding: '40px 20px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '900px', margin: 'auto' }}>
+          <video 
+            autoPlay 
+            loop 
+            playsInline 
+            controls 
+            style={{ 
+              width: '100%', 
+              display: 'block', 
+              borderRadius: '12px', 
+              boxShadow: '0 10px 30px rgba(0,0,0,0.5)' 
+            }}
+          >
+            <source src="/ارا_فقطاريد_فيديو_ون_عندك.mp4" type="video/mp4" />
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
         </div>
       </section>
 
@@ -546,7 +567,7 @@ function SwazrLanding() {
                 day one of acquisition.
               </p>
               <br />
-              
+              <a
                 href="https://www.uspto.gov"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -612,7 +633,7 @@ function SwazrLanding() {
           SWAZR.COM is available now. First serious offer takes it.
         </p>
         <div className="hero-btns">
-          
+          <a
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -620,7 +641,7 @@ function SwazrLanding() {
           >
             Make an Offer on GoDaddy
           </a>
-          
+          <a
             href="https://wa.me/212660355053"
             target="_blank"
             rel="noopener noreferrer"
@@ -630,7 +651,7 @@ function SwazrLanding() {
           </a>
         </div>
         <div className="cta-contact">
-          
+          <a
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -638,7 +659,7 @@ function SwazrLanding() {
           >
             GoDaddy
           </a>
-          
+          <a
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -649,7 +670,7 @@ function SwazrLanding() {
           <a href="mailto:swazr.brend@gmail.com" className="contact-item">
             Email
           </a>
-          
+          <a
             href="https://wa.me/212660355053"
             target="_blank"
             rel="noopener noreferrer"
@@ -670,14 +691,14 @@ function SwazrLanding() {
           <a href={GODADDY_URL} target="_blank" rel="noopener noreferrer">
             Afternic
           </a>
-          
+          <a
             href="https://www.uspto.gov"
             target="_blank"
             rel="noopener noreferrer"
           >
             USPTO
           </a>
-          
+          <a
             href="https://github.com/eldrwy3-collab/SWAZR-Brand-Repository"
             target="_blank"
             rel="noopener noreferrer"
