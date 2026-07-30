@@ -1,43 +1,41 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import '../styles.css'
+import { createRootRoute, Outlet, ScrollRestoration, Meta, Links, Scripts } from '@tanstack/react-router';
+import type { ReactNode } from 'react';
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      {
-        title:
-          'SWAZR.COM — Premium Domain for Autonomous Defense, Drone & AI Innovation',
-      },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'robots', content: 'index, follow' },
+      { title: 'SWAZR.com | Premium Autonomous Defense & Drone Swarm Domain' },
       {
         name: 'description',
         content:
-          'SWAZR.COM — a verified premium domain engineered for autonomous systems, drones, defense, robotics, and AI innovation. USPTO-cleared. Forged from three ancient linguistic roots. Available now on GoDaddy, Afternic, and Atom.',
+          'SWAZR.com is a premier domain asset for autonomous defense systems, drone swarm response, counter-drone technology, AI, and robotics. Available for acquisition at $13,888 USD.',
       },
-      { name: 'robots', content: 'index, follow' },
-      {
-        property: 'og:title',
-        content:
-          'SWAZR.COM — Premium Domain for Autonomous Defense & AI Innovation',
-      },
+      // Open Graph
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'SWAZR.com | Premium Autonomous Defense Domain' },
       {
         property: 'og:description',
         content:
-          'USPTO-cleared. One letter from SWARM. Forged from Proto-Germanic, Hebrew, and Arabic. Available now on GoDaddy, Afternic, and Atom.',
+          'Acquire SWAZR.com for next-generation defense tech, drone swarms, and AI robotics systems.',
       },
       { property: 'og:url', content: 'https://swazr.com/' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'https://swazr.com/assets/images/card.jpg' },
+      { property: 'og:image', content: 'https://swazr.com/og-image.png' },
+      // Twitter Card
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'SWAZR.COM — Premium Domain' },
+      { name: 'twitter:title', content: 'SWAZR.com | Premium Defense Domain' },
       {
         name: 'twitter:description',
         content:
-          'USPTO-cleared. One letter from SWARM. Available now on GoDaddy, Afternic, and Atom.',
+          'Premium domain for autonomous defense, counter-drone response, and military robotics.',
       },
+      { name: 'twitter:image', content: 'https://swazr.com/og-image.png' },
     ],
     links: [
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      { rel: 'apple-touch-icon', href: '/favicon.png' },
       { rel: 'canonical', href: 'https://swazr.com/' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
@@ -45,91 +43,81 @@ export const Route = createRootRoute({
         href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap',
       },
     ],
-    scripts: [
-      {
-        type: 'application/ld+json',
-        children: JSON.stringify({
-          '@context': 'https://schema.org/',
-          '@type': 'Product',
-          name: 'SWAZR.COM - Premium Defense, AI, Robotics & Drone Swarms Domain',
-          image: 'https://swazr.com/assets/images/card.jpg',
-          description:
-            'SWAZR.COM is a verified premium domain engineered for autonomous AI systems, robotics, drone swarms, counter-drone and counter-robotics defense systems, and advanced defense software solutions. Listed, verified, and available for secure transfer via top trusted global domain marketplaces: GoDaddy, Afternic, and Atom.',
-          brand: {
-            '@type': 'Brand',
-            name: 'SWAZR',
-          },
-          offers: [
-            {
-              '@type': 'Offer',
-              name: 'GoDaddy Premium Listing',
-              url: 'https://swazr.com/',
-              priceCurrency: 'USD',
-              price: '13888',
-              priceValidUntil: '2027-12-31',
-              availability: 'https://schema.org/InStock',
-              itemCondition: 'https://schema.org/NewCondition',
-              seller: {
-                '@type': 'Organization',
-                name: 'GoDaddy',
-              },
-            },
-            {
-              '@type': 'Offer',
-              name: 'Afternic Marketplace Listing',
-              url: 'https://swazr.com/',
-              priceCurrency: 'USD',
-              price: '13888',
-              priceValidUntil: '2027-12-31',
-              availability: 'https://schema.org/InStock',
-              itemCondition: 'https://schema.org/NewCondition',
-              seller: {
-                '@type': 'Organization',
-                name: 'Afternic',
-              },
-            },
-            {
-              '@type': 'Offer',
-              name: 'Atom Premium Listing',
-              url: 'https://swazr.com/',
-              priceCurrency: 'USD',
-              price: '13888',
-              priceValidUntil: '2027-12-31',
-              availability: 'https://schema.org/InStock',
-              itemCondition: 'https://schema.org/NewCondition',
-              seller: {
-                '@type': 'Organization',
-                name: 'Atom',
-              },
-            },
-          ],
-        }),
-      },
-      {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-0G6DPK6T43',
-        async: true,
-      },
-      {
-        children: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-0G6DPK6T43');`,
-      },
-    ],
   }),
-  shellComponent: RootDocument,
-})
+  component: RootComponent,
+});
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
+  const productSchema = {
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name: 'SWAZR.com Domain Name',
+    image: ['https://swazr.com/og-image.png'],
+    description:
+      'Premium domain asset for autonomous defense, drone swarm response, AI, and robotics technology.',
+    sku: 'SWAZR-DOM-2026',
+    brand: {
+      '@type': 'Brand',
+      name: 'SWAZR',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      lowPrice: '13888',
+      highPrice: '13888',
+      offerCount: '3',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Buy on GoDaddy',
+          url: 'https://www.godaddy.com/domainsearch/find?checkAvailability=true&domainName=swazr.com',
+          price: '13888',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Buy on Afternic',
+          url: 'https://www.afternic.com/domain/swazr.com',
+          price: '13888',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Buy on Atom',
+          url: 'https://www.atom.com/domain/swazr.com',
+          price: '13888',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        },
+      ],
+    },
+  };
+
+  return (
+    <RootDocument>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <Outlet />
+    </RootDocument>
+  );
+}
+
+function RootDocument({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <HeadContent />
+        <Meta />
+        <Links />
       </head>
-      <body>
+      <body className="bg-slate-950 text-slate-100 antialiased font-sans">
         {children}
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
