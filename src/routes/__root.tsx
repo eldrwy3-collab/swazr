@@ -13,7 +13,7 @@ export const Route = createRootRoute({
       {
         name: 'description',
         content:
-          'SWAZR.COM — a verified premium domain engineered for autonomous systems, drones, defense, robotics, and AI innovation. USPTO-cleared. Forged from three ancient linguistic roots. Available now on GoDaddy and Afternic.',
+          'SWAZR.COM — a verified premium domain engineered for autonomous systems, drones, defense, robotics, and AI innovation. USPTO-cleared. Forged from three ancient linguistic roots. Available now on GoDaddy, Afternic, and Atom.',
       },
       { name: 'robots', content: 'index, follow' },
       {
@@ -24,7 +24,7 @@ export const Route = createRootRoute({
       {
         property: 'og:description',
         content:
-          'USPTO-cleared. One letter from SWARM. Forged from Proto-Germanic, Hebrew, and Arabic. Available now on GoDaddy and Afternic.',
+          'USPTO-cleared. One letter from SWARM. Forged from Proto-Germanic, Hebrew, and Arabic. Available now on GoDaddy, Afternic, and Atom.',
       },
       { property: 'og:url', content: 'https://swazr.com/' },
       { property: 'og:type', content: 'website' },
@@ -34,7 +34,7 @@ export const Route = createRootRoute({
       {
         name: 'twitter:description',
         content:
-          'USPTO-cleared. One letter from SWARM. Available now on GoDaddy and Afternic.',
+          'USPTO-cleared. One letter from SWARM. Available now on GoDaddy, Afternic, and Atom.',
       },
     ],
     links: [
@@ -45,35 +45,77 @@ export const Route = createRootRoute({
         href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap',
       },
     ],
-    scripts: [ 
+    scripts: [
       {
         type: 'application/ld+json',
         children: JSON.stringify({
-          '@context': 'https://schema.org',
+          '@context': 'https://schema.org/',
           '@type': 'Product',
-          name: 'SWAZR.COM',
+          name: 'SWAZR.COM - Premium Defense, AI, Robotics & Drone Swarms Domain',
+          image: 'https://swazr.com/assets/images/card.jpg',
           description:
-            'Premium domain for autonomous defense, drone, and AI innovation. USPTO-cleared and available for acquisition.',
-          brand: { '@type': 'Brand', name: 'SWAZR' },
-          offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-            url: 'https://www.godaddy.com/domainsearch/find?premiumOnly=true&domainToCheck=swazr',
-            priceCurrency: 'USD',
+            'SWAZR.COM is a verified premium domain engineered for autonomous AI systems, robotics, drone swarms, counter-drone and counter-robotics defense systems, and advanced defense software solutions. Listed, verified, and available for secure transfer via top trusted global domain marketplaces: GoDaddy, Afternic, and Atom.',
+          brand: {
+            '@type': 'Brand',
+            name: 'SWAZR',
           },
+          offers: [
+            {
+              '@type': 'Offer',
+              name: 'GoDaddy Premium Listing',
+              url: 'https://swazr.com/',
+              priceCurrency: 'USD',
+              price: '13888',
+              priceValidUntil: '2027-12-31',
+              availability: 'https://schema.org/InStock',
+              itemCondition: 'https://schema.org/NewCondition',
+              seller: {
+                '@type': 'Organization',
+                name: 'GoDaddy',
+              },
+            },
+            {
+              '@type': 'Offer',
+              name: 'Afternic Marketplace Listing',
+              url: 'https://swazr.com/',
+              priceCurrency: 'USD',
+              price: '13888',
+              priceValidUntil: '2027-12-31',
+              availability: 'https://schema.org/InStock',
+              itemCondition: 'https://schema.org/NewCondition',
+              seller: {
+                '@type': 'Organization',
+                name: 'Afternic',
+              },
+            },
+            {
+              '@type': 'Offer',
+              name: 'Atom Premium Listing',
+              url: 'https://swazr.com/',
+              priceCurrency: 'USD',
+              price: '13888',
+              priceValidUntil: '2027-12-31',
+              availability: 'https://schema.org/InStock',
+              itemCondition: 'https://schema.org/NewCondition',
+              seller: {
+                '@type': 'Organization',
+                name: 'Atom',
+              },
+            },
+          ],
         }),
       },
-        {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-0G6DPK6T43',
-          async: true,
-        },
-        {
-          children: `window.dataLayer = window.dataLayer || [];
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-0G6DPK6T43',
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-0G6DPK6T43');`,
-        },
-      ],
+      },
+    ],
   }),
   shellComponent: RootDocument,
 })
