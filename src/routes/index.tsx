@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -8,6 +9,8 @@ const GODADDY_URL =
   'https://www.godaddy.com/domainsearch/find?premiumOnly=true&domainToCheck=swazr'
 
 function SwazrLanding() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <>
       {/* NAV */}
@@ -37,7 +40,7 @@ function SwazrLanding() {
           <Link to="/buyer-fit" className="nav-link">
             Buyer Fit
           </Link>
-          <a
+          
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -45,8 +48,81 @@ function SwazrLanding() {
           >
             Make an Offer
           </a>
+          <button
+            className="nav-toggle"
+            aria-label="Open menu"
+            onClick={() => setMenuOpen(true)}
+          >
+            ☰
+          </button>
         </div>
       </nav>
+
+      {/* MOBILE MENU */}
+      <div
+        className={`nav-overlay ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+      />
+      <div className={`nav-mobile-menu ${menuOpen ? 'open' : ''}`}>
+        
+          href="#linguistic"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Heritage
+        </a>
+        
+          href="#phonetic"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Phonetic
+        </a>
+        
+          href="#usp"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Legal
+        </a>
+        <Link
+          to="/methodology"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Methodology
+        </Link>
+        <Link
+          to="/case-studies"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Case Studies
+        </Link>
+        <Link
+          to="/brand-foundation"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Brand Foundation
+        </Link>
+        <Link
+          to="/buyer-fit"
+          className="nav-mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Buyer Fit
+        </Link>
+        
+          href={GODADDY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-mobile-cta"
+          onClick={() => setMenuOpen(false)}
+        >
+          Make an Offer
+        </a>
+      </div>
 
       {/* HERO */}
       <section className="hero">
@@ -63,7 +139,7 @@ function SwazrLanding() {
           ancient civilizations, engineered for the autonomous defense era.
         </p>
         <div className="hero-btns">
-          <a
+          
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -122,7 +198,8 @@ function SwazrLanding() {
                   char: 'S',
                   primary:
                     'Sensor · Signal · Supply · Swift · Strategic · Secure · Shield',
-                  alts: 'The S anchors all sensing, signaling, and security functions — the first layer of any autonomous defense system.',
+                  alts:
+                    'The S anchors all sensing, signaling, and security functions — the first layer of any autonomous defense system.',
                   tags: [
                     'Sensor-Wide',
                     'Strategic Wide-Area',
@@ -137,18 +214,15 @@ function SwazrLanding() {
                 {
                   char: 'W',
                   primary: 'Wide · Warning · Watch · Workload',
-                  alts: 'W represents scale and vigilance — wide-area coverage, persistent watch, workload intelligence.',
-                  tags: [
-                    'Wide-Area',
-                    'Warning',
-                    'Watch',
-                    'Workload Analysis',
-                  ],
+                  alts:
+                    'W represents scale and vigilance — wide-area coverage, persistent watch, workload intelligence.',
+                  tags: ['Wide-Area', 'Warning', 'Watch', 'Workload Analysis'],
                 },
                 {
                   char: 'A',
                   primary: 'Aerial · Autonomous · Adaptive · Access',
-                  alts: 'A defines the domain of operation — aerial, autonomous, adaptive. The defining word of the drone era.',
+                  alts:
+                    'A defines the domain of operation — aerial, autonomous, adaptive. The defining word of the drone era.',
                   tags: [
                     'Aerial Zone',
                     'Autonomous Zone',
@@ -159,7 +233,8 @@ function SwazrLanding() {
                 {
                   char: 'Z',
                   primary: 'Zone · Zero-Latency · Zero-Restriction',
-                  alts: 'Z defines space and speed — the operational zone and the zero-latency imperative of modern defense systems.',
+                  alts:
+                    'Z defines space and speed — the operational zone and the zero-latency imperative of modern defense systems.',
                   tags: [
                     'Zone Reconnaissance',
                     'Zero-Latency',
@@ -170,7 +245,8 @@ function SwazrLanding() {
                   char: 'R',
                   primary:
                     'Reconnaissance · Response · Relay · Rescue · Router',
-                  alts: 'R closes the loop — from reconnaissance to response, the full operational cycle of any autonomous system.',
+                  alts:
+                    'R closes the loop — from reconnaissance to response, the full operational cycle of any autonomous system.',
                   tags: [
                     'Reconnaissance',
                     'Response',
@@ -201,7 +277,11 @@ function SwazrLanding() {
       </section>
 
       {/* PHONETIC ENGINEERING */}
-      <section className="section" id="phonetic" style={{ background: 'var(--gray)' }}>
+      <section
+        className="section"
+        id="phonetic"
+        style={{ background: 'var(--gray)' }}
+      >
         <div className="section-inner">
           <div className="section-eyebrow">Phonetic Architecture</div>
           <h2 className="section-title">The Strategic Vowel Elision Rule</h2>
@@ -247,8 +327,8 @@ function SwazrLanding() {
               <div className="phonetic-result-word">SWAZR</div>
               <div className="phonetic-result-label">
                 Five-letter phonetic architecture — stable, resonant,
-                universally pronounceable across Arabic, English, and all major
-                languages
+                universally pronounceable across Arabic, English, and all
+                major languages
               </div>
             </div>
           </div>
@@ -263,9 +343,9 @@ function SwazrLanding() {
             Forged From Three Ancient Civilizations
           </h2>
           <p className="section-sub">
-            SWAZR is not a coined word and not a random creation. It is a brand
-            identity forged from ancient linguistic foundations across three
-            civilizations, giving it rare cross-cultural depth, global
+            SWAZR is not a coined word and not a random creation. It is a
+            brand identity forged from ancient linguistic foundations across
+            three civilizations, giving it rare cross-cultural depth, global
             authority, and natural familiarity in Arabic culture.
           </p>
           <div className="roots-grid">
@@ -324,9 +404,9 @@ function SwazrLanding() {
             >
               This synthesis grants the brand a majestic depth, echoing
               traditions across civilizations. The result is a name that
-              carries the weight of oath, the strength of support and alliance,
-              and the precision of purposeful reach — making it naturally
-              familiar across Arabic, Hebrew, and European cultures
+              carries the weight of oath, the strength of support and
+              alliance, and the precision of purposeful reach — making it
+              naturally familiar across Arabic, Hebrew, and European cultures
               simultaneously.{' '}
               <strong style={{ color: 'var(--white)' }}>
                 Through the Strategic Vowel Elision Rule, these roots are
@@ -442,17 +522,21 @@ function SwazrLanding() {
       </section>
 
       {/* USPTO */}
-      <section className="section" id="usp" style={{ background: 'var(--gray)' }}>
+      <section
+        className="section"
+        id="usp"
+        style={{ background: 'var(--gray)' }}
+      >
         <div className="section-inner">
           <div className="section-eyebrow">Legal Clearance</div>
           <h2 className="section-title">USPTO Verified. Zero Conflicts.</h2>
           <div className="usp-grid">
             <div className="usp-text">
               <p>
-                A comprehensive search was conducted through the United States
-                Patent and Trademark Office database. The results confirm that
-                there are no conflicting registered or pending trademarks
-                matching SWAZR.
+                A comprehensive search was conducted through the United
+                States Patent and Trademark Office database. The results
+                confirm that there are no conflicting registered or pending
+                trademarks matching SWAZR.
               </p>
               <br />
               <p>
@@ -462,7 +546,7 @@ function SwazrLanding() {
                 day one of acquisition.
               </p>
               <br />
-              <a
+              
                 href="https://www.uspto.gov"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -528,7 +612,7 @@ function SwazrLanding() {
           SWAZR.COM is available now. First serious offer takes it.
         </p>
         <div className="hero-btns">
-          <a
+          
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -536,7 +620,7 @@ function SwazrLanding() {
           >
             Make an Offer on GoDaddy
           </a>
-          <a
+          
             href="https://wa.me/212660355053"
             target="_blank"
             rel="noopener noreferrer"
@@ -546,7 +630,7 @@ function SwazrLanding() {
           </a>
         </div>
         <div className="cta-contact">
-          <a
+          
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -554,7 +638,7 @@ function SwazrLanding() {
           >
             GoDaddy
           </a>
-          <a
+          
             href={GODADDY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -565,7 +649,7 @@ function SwazrLanding() {
           <a href="mailto:swazr.brend@gmail.com" className="contact-item">
             Email
           </a>
-          <a
+          
             href="https://wa.me/212660355053"
             target="_blank"
             rel="noopener noreferrer"
@@ -586,14 +670,14 @@ function SwazrLanding() {
           <a href={GODADDY_URL} target="_blank" rel="noopener noreferrer">
             Afternic
           </a>
-          <a
+          
             href="https://www.uspto.gov"
             target="_blank"
             rel="noopener noreferrer"
           >
             USPTO
           </a>
-          <a
+          
             href="https://github.com/eldrwy3-collab/SWAZR-Brand-Repository"
             target="_blank"
             rel="noopener noreferrer"
