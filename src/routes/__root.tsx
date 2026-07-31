@@ -1,4 +1,4 @@
-import { createRootRoute, Outlet, ScrollRestoration, Meta, Links, Scripts } from '@tanstack/react-router';
+import { createRootRoute, Outlet, ScrollRestoration, HeadContent, Scripts } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
 
 export const Route = createRootRoute({
@@ -13,6 +13,7 @@ export const Route = createRootRoute({
         content:
           'SWAZR.com is a premier domain asset for autonomous defense systems, drone swarm response, counter-drone technology, AI, and robotics. Available for acquisition at $13,888 USD.',
       },
+      // Open Graph
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: 'SWAZR.com | Premium Autonomous Defense Domain' },
       {
@@ -22,6 +23,7 @@ export const Route = createRootRoute({
       },
       { property: 'og:url', content: 'https://swazr.com/' },
       { property: 'og:image', content: 'https://swazr.com/og-image.png' },
+      // Twitter Card
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'SWAZR.com | Premium Defense Domain' },
       {
@@ -108,8 +110,7 @@ function RootDocument({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <Meta />
-        <Links />
+        <HeadContent />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM752PZ42B"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -130,5 +131,3 @@ function RootDocument({ children }: { children: ReactNode }) {
     </html>
   );
 }
-
-export default Route;
