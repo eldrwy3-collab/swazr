@@ -112,8 +112,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <Meta />
         <Links />
-        {/* نقل سكربتات جوجل أناليتكس هنا بشكل آمن لتفادي أخطاء الـ Build في Netlify */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM752PZ42B" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM752PZ42B"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
