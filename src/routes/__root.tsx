@@ -1,5 +1,6 @@
 import { createRootRoute, Outlet, ScrollRestoration, HeadContent, Scripts } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
+import appCss from '../styles.css?url';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -34,6 +35,7 @@ export const Route = createRootRoute({
       { name: 'twitter:image', content: 'https://swazr.com/og-image.png' },
     ],
     links: [
+      { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       { rel: 'apple-touch-icon', href: '/favicon.png' },
       { rel: 'canonical', href: 'https://swazr.com/' },
@@ -123,7 +125,7 @@ function RootDocument({ children }: { children: ReactNode }) {
           }}
         />
       </head>
-      <body className="bg-slate-950 text-slate-100 antialiased font-sans">
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />
