@@ -43,20 +43,6 @@ export const Route = createRootRoute({
         href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap',
       },
     ],
-    scripts: [
-      {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-XM752PZ42B',
-        async: true,
-      },
-      {
-        children: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XM752PZ42B');
-        `,
-      },
-    ],
   }),
   component: RootComponent,
 });
@@ -126,6 +112,18 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <Meta />
         <Links />
+        {/* نقل سكربتات جوجل أناليتكس هنا بشكل آمن لتفادي أخطاء الـ Build في Netlify */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM752PZ42B" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XM752PZ42B');
+            `,
+          }}
+        />
       </head>
       <body className="bg-slate-950 text-slate-100 antialiased font-sans">
         {children}
