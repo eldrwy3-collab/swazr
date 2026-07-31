@@ -1,6 +1,10 @@
-import React from 'react';
+import { createFileRoute } from '@tanstack/react-router';
 
-export default function Index() {
+export const Route = createFileRoute('/')({
+  component: Index,
+});
+
+function Index() {
   return (
     <div style={{ background: '#070707', color: '#f1f1f1', fontFamily: 'monospace', minHeight: '100vh', margin: 0, padding: 0 }}>
       
@@ -109,15 +113,4 @@ export default function Index() {
         <div style={{ maxWidth: '600px', margin: 'auto' }}>
           <h3 style={{ fontSize: '20px', color: '#fff', marginBottom: '10px' }}>Not all brands are born. Some are engineered to endure.</h3>
           <p style={{ fontSize: '13px', color: '#777', marginBottom: '25px' }}>Secure your proprietary position in the global economy today.</p>
-          <a href="mailto:contact@swazr.com" style={{ background: '#ccff00', color: '#000', padding: '12px 30px', fontWeight: 'bold', textDecoration: 'none', borderRadius: '4px', display: 'inline-block', fontSize: '14px' }}>
-            INITIATE ACQUISITION
-          </a>
-          <div style={{ marginTop: '40px', fontSize: '11px', color: '#55px' }}>
-            © 2026 SWAZR. All rights reserved.
-          </div>
-        </div>
-      </footer>
-
-    </div>
-  );
-}
+          <a
