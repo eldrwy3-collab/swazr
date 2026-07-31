@@ -131,5 +131,4 @@ function RootDocument({ children }: { children: ReactNode }) {
   );
 }
 
-// إضافة التصدير الافتراضي لمنع خطأ الـ Plugin في حال طالبه Vite بشكل مباشر
 export default Route;
