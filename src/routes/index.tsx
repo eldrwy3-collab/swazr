@@ -38,6 +38,12 @@ function SwazrLanding() {
           <Link to="/buyer-fit" className="nav-link">
             Buyer Fit
           </Link>
+          <Link to="/faq" className="nav-link">
+            FAQ
+          </Link>
+          <Link to="/contact" className="nav-link">
+            Contact
+          </Link>
           <a
             href={GODADDY_URL}
             target="_blank"
@@ -643,6 +649,8 @@ function SwazrLanding() {
           >
             Documentation
           </a>
+          <Link to="/faq">FAQ</Link>
+          <Link to="/contact">Contact</Link>
           <a href="mailto:swazr.brend@gmail.com">Email</a>
         </div>
       </footer>
